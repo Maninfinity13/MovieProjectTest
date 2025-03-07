@@ -505,6 +505,7 @@
             this.btMovieSearch.TabIndex = 22;
             this.btMovieSearch.Text = "ค้นหา";
             this.btMovieSearch.UseVisualStyleBackColor = true;
+            this.btMovieSearch.Click += new System.EventHandler(this.btMovieSearch_Click);
             // 
             // tbMovieSearch
             // 
@@ -513,6 +514,7 @@
             this.tbMovieSearch.Name = "tbMovieSearch";
             this.tbMovieSearch.Size = new System.Drawing.Size(104, 20);
             this.tbMovieSearch.TabIndex = 21;
+            this.tbMovieSearch.TextChanged += new System.EventHandler(this.tbMovieSearch_TextChanged);
             // 
             // rdMovieName
             // 
