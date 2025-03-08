@@ -126,6 +126,7 @@
             this.btSaveAddEdit.Text = "บันทึก";
             this.btSaveAddEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSaveAddEdit.UseVisualStyleBackColor = true;
+            this.btSaveAddEdit.Click += new System.EventHandler(this.btSaveAddEdit_Click);
             // 
             // btDel
             // 
@@ -165,6 +166,7 @@
             this.btAdd.Text = "เพิ่ม";
             this.btAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // label14
             // 
@@ -401,6 +403,7 @@
             this.cbbMovieType.Name = "cbbMovieType";
             this.cbbMovieType.Size = new System.Drawing.Size(187, 21);
             this.cbbMovieType.TabIndex = 7;
+            this.cbbMovieType.SelectedIndexChanged += new System.EventHandler(this.cbbMovieType_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -459,6 +462,7 @@
             this.nudMovieMinute.Name = "nudMovieMinute";
             this.nudMovieMinute.Size = new System.Drawing.Size(41, 20);
             this.nudMovieMinute.TabIndex = 10;
+            this.nudMovieMinute.ValueChanged += new System.EventHandler(this.nudMovieMinute_ValueChanged);
             // 
             // label8
             // 
@@ -505,7 +509,6 @@
             this.btMovieSearch.TabIndex = 22;
             this.btMovieSearch.Text = "ค้นหา";
             this.btMovieSearch.UseVisualStyleBackColor = true;
-            this.btMovieSearch.Click += new System.EventHandler(this.btMovieSearch_Click);
             // 
             // tbMovieSearch
             // 
@@ -638,6 +641,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMovie";
             this.Text = "จัดการข้อมูลภาพยนต์";
+            this.Load += new System.EventHandler(this.FrmMovie_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDirMovie)).EndInit();
