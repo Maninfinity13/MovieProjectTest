@@ -14,7 +14,7 @@ namespace MovieProjectTest
     public partial class FrmMovie : Form
     {
         //เชื่อมต่อกับฐานข้อมูล
-        private string connectionString = "Server=DESKTOP-ILU10GQ;Database=movie_record_db;Trusted_connection=True";
+        private string connectionString = "Server=DESKTOP-ILU10GQ\\SQLEXPRESS;Database=movie_record_db;Trusted_connection=True";
 
         public FrmMovie()
         {
@@ -50,7 +50,7 @@ namespace MovieProjectTest
         private void getMovieFromDBToDGV()
         {
             //ติดต่อ DB
-            SqlConnection conn = new SqlConnection("Server=DESKTOP-ILU10GQ;Database=movie_record_db;Trusted_connection=True");
+            SqlConnection conn = new SqlConnection(connectionString);
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -108,9 +108,9 @@ namespace MovieProjectTest
         private string GenerateNewMovieId()
         {
             string newMovieId = "mv001"; // ค่าพื้นฐานกรณีไม่มีข้อมูลในฐานข้อมูล
-            string query = "SELECT TOP 1 movie_id FROM movie_tb ORDER BY movie_id DESC";
+            string query = "SELECT TOP 1 movieId FROM movie_tb ORDER BY movieId DESC";
 
-            using (SqlConnection conn = new SqlConnection("Server=DESKTOP-ILU10GQ;Database=movie_record_db;Trusted_connection=True"))
+            using (SqlConnection conn = new SqlConnection( connectionString ))
             {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -207,7 +207,7 @@ namespace MovieProjectTest
                 //ส่งข้อมูลไปที่ DB
                 //ติดต่อ DB
 
-                SqlConnection conn = new SqlConnection("Server=DESKTOP-DESKTOP-ILU10GQ;Database=movie_record_db;Trusted_connection=True");
+                SqlConnection conn = new SqlConnection(connectionString);
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
