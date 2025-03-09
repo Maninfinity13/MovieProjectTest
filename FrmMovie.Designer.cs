@@ -78,6 +78,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDirMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMovieImg)).BeginInit();
@@ -113,6 +114,7 @@
             this.btCancel.Text = "ยกเลิก";
             this.btCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btSaveAddEdit
             // 
@@ -140,6 +142,7 @@
             this.btDel.Text = "ลบ";
             this.btDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btEdit
             // 
@@ -153,6 +156,7 @@
             this.btEdit.Text = "แก้ไข";
             this.btEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btAdd
             // 
@@ -245,6 +249,7 @@
             this.btSelectImg2.TabIndex = 24;
             this.btSelectImg2.Text = "...";
             this.btSelectImg2.UseVisualStyleBackColor = true;
+            this.btSelectImg2.Click += new System.EventHandler(this.btSelectImg2_Click);
             // 
             // btSelectImg1
             // 
@@ -255,6 +260,7 @@
             this.btSelectImg1.TabIndex = 23;
             this.btSelectImg1.Text = "...";
             this.btSelectImg1.UseVisualStyleBackColor = true;
+            this.btSelectImg1.Click += new System.EventHandler(this.btSelectImg1_Click);
             // 
             // pcbDirMovie
             // 
@@ -398,6 +404,15 @@
             // cbbMovieType
             // 
             this.cbbMovieType.FormattingEnabled = true;
+            this.cbbMovieType.Items.AddRange(new object[] {
+            "Action",
+            "Adventure",
+            "Drama",
+            "Thiller",
+            "Comedy",
+            "Sci-Fi",
+            "Fantasy",
+            "War"});
             this.cbbMovieType.Location = new System.Drawing.Point(104, 218);
             this.cbbMovieType.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMovieType.Name = "cbbMovieType";
@@ -431,6 +446,7 @@
             this.tbMovieDVDTotal.Size = new System.Drawing.Size(33, 20);
             this.tbMovieDVDTotal.TabIndex = 14;
             this.tbMovieDVDTotal.Text = "0";
+            this.tbMovieDVDTotal.TextChanged += new System.EventHandler(this.tbMovieDVDTotal_TextChanged);
             // 
             // nudMovieHour
             // 
@@ -509,6 +525,7 @@
             this.btMovieSearch.TabIndex = 22;
             this.btMovieSearch.Text = "ค้นหา";
             this.btMovieSearch.UseVisualStyleBackColor = true;
+            this.btMovieSearch.Click += new System.EventHandler(this.btMovieSearch_Click);
             // 
             // tbMovieSearch
             // 
@@ -559,6 +576,7 @@
             this.lsMovieShow.TabIndex = 0;
             this.lsMovieShow.UseCompatibleStateImageBehavior = false;
             this.lsMovieShow.View = System.Windows.Forms.View.Details;
+            this.lsMovieShow.SelectedIndexChanged += new System.EventHandler(this.lsMovieShow_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -581,7 +599,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvMovieShowAll.Location = new System.Drawing.Point(45, 384);
+            this.dgvMovieShowAll.Location = new System.Drawing.Point(46, 384);
             this.dgvMovieShowAll.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMovieShowAll.Name = "dgvMovieShowAll";
             this.dgvMovieShowAll.ReadOnly = true;
@@ -589,6 +607,7 @@
             this.dgvMovieShowAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMovieShowAll.Size = new System.Drawing.Size(675, 120);
             this.dgvMovieShowAll.TabIndex = 42;
+            this.dgvMovieShowAll.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovieShowAll_CellContentClick);
             // 
             // Column1
             // 
@@ -706,5 +725,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
